@@ -8,9 +8,9 @@
   <parameter name="browser" value="chrome"></parameter>
     <classes>
         
-      <class name="testscript.LoginTest">
+      <class name="testscript.AdminUserTest">
       <methods>
-      <include name="verifyUserLoginWithValidUsernameAndInValidPassword">
+      <include name="VerifyUserCanAddNewAdminUser">
       
       </include>
       </methods>

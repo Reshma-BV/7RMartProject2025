@@ -21,8 +21,7 @@ public class AdminUserTest extends Base{
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickOnSigninButton();
 		AdminUserPage adminuserpage = new AdminUserPage(driver);
-		adminuserpage.clickAdminUser().clickManageUser();
-		adminuserpage.clickNewButton();
+		adminuserpage.clickAdminUser().clickManageUser().clickNewButton();
 		FakerUtility fakeru=new FakerUtility();
 		String newusername = fakeru.createUserName();
 		String newpassword = fakeru.createPassword();

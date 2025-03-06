@@ -44,6 +44,12 @@ public class AdminUserPage {
 		adminuser.click();
 		return this;
 	}
+	@FindBy(xpath = "//p[text()='Manage Users']")
+	private WebElement manageuser;
+	public AdminUserPage clickManageUser() {
+		manageuser.click();
+		return new AdminUserPage(driver);
+	}
 
 	public AdminUserPage clickNewButton() {
 		btn_Newuser.click();

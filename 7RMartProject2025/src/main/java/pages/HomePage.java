@@ -41,6 +41,7 @@ public class HomePage {
 	public AdminUserPage clickManageUser() {
 		manageuser.click();
 		return new AdminUserPage(driver);
+		
 	}
 	
 	
