@@ -7,7 +7,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 public class ExtentReportUtility {
 	public static final ExtentReports extentReports = new ExtentReports();
 	public synchronized static ExtentReports createExtentReports() {
-		ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");//folder generation
+		ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");//folder generation and file extension
 		reporter.config().setReportName("7RMartProject2025");
 		extentReports.attachReporter(reporter);
 		extentReports.setSystemInfo("Organization", "Obsqura");

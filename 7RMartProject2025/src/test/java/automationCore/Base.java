@@ -25,37 +25,31 @@ public class Base {
 	FileInputStream fs;
 	public WebDriver driver;
 
-	@BeforeMethod(alwaysRun=true)
+	@BeforeMethod(alwaysRun = true)
 	@Parameters("browser")
 	public void initializeBrowser(String browser) throws Exception {
-	prop=new Properties();
-	fs=new FileInputStream(Constants.CONFIGFILE);
-	prop.load(fs);
-		if(browser.equalsIgnoreCase("chrome"))
-		{
-			driver=new ChromeDriver();
-		}
-		else if(browser.equalsIgnoreCase("firefox"))
-		{
-			driver=new FirefoxDriver();
-		}
-		else if(browser.equalsIgnoreCase("edge"))
-		{
-			driver=new EdgeDriver();
-		}
-		else
-		{
+		prop = new Properties();
+		fs = new FileInputStream(Constants.CONFIGFILE);
+		prop.load(fs);
+		if (browser.equalsIgnoreCase("chrome")) {
+			driver = new ChromeDriver();
+		} else if (browser.equalsIgnoreCase("firefox")) {
+			driver = new FirefoxDriver();
+		} else if (browser.equalsIgnoreCase("edge")) {
+			driver = new EdgeDriver();
+		} else {
 			throw new Exception("Invalid Browser");
 		}
 		driver.get(prop.getProperty("url"));
-		WaitUtility wait=new WaitUtility();
+		WaitUtility wait = new WaitUtility();
 		wait.implicitWait(driver);
 		driver.manage().window().maximize();
 	}
 
-	@AfterMethod(alwaysRun=true)
-	public void driverQuit(ITestResult itestresult) throws IOException {// ITestResult interface manage all the test results
-																		
+	@AfterMethod(alwaysRun = true)
+	public void driverQuit(ITestResult itestresult) throws IOException {// ITestResult interface manage all the test
+																		// results
+
 		if (itestresult.getStatus() == ITestResult.FAILURE) {
 			ScreenshotUtility screenShot = new ScreenshotUtility();
 			screenShot.getScreenshot(driver, itestresult.getName());

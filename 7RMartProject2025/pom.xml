@@ -19,9 +19,9 @@
 
 				<configuration>
 
-					<source>1.8</source>
+					<source>17</source>
 
-					<target>1.8</target>
+					<target>17</target>
 
 				</configuration>
 
@@ -101,10 +101,10 @@
 			<version>2.17.2</version>
 		</dependency>
 		<dependency>
-	  <groupId>org.projectlombok</groupId>
-	  <artifactId>lombok</artifactId>
-	  <version>1.18.22</version>
-	</dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.22</version>
+		</dependency>
 	</dependencies>
 
 

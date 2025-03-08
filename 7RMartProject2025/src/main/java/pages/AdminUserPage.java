@@ -8,12 +8,13 @@ import utilities.PageUtility;
 
 public class AdminUserPage {
 	public WebDriver driver;
-	PageUtility pageutility=new PageUtility();
-	
+	PageUtility pageutility = new PageUtility();
+
 	public AdminUserPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+
 	@FindBy(xpath = "(//a[@class='nav-link'])[10]")
 	private WebElement adminuser;
 
@@ -44,8 +45,10 @@ public class AdminUserPage {
 		adminuser.click();
 		return this;
 	}
+
 	@FindBy(xpath = "//p[text()='Manage Users']")
 	private WebElement manageuser;
+
 	public AdminUserPage clickManageUser() {
 		manageuser.click();
 		return new AdminUserPage(driver);

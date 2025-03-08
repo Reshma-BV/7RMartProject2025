@@ -29,7 +29,7 @@ public class Listeners extends Base implements ITestListener {
 
 	}
 
-	public void onTestSuccess(ITestResult result) {
+	public void onTestSuccess(ITestResult result) {// manage life cycle of pjct report
 
 		ITestListener.super.onTestSuccess(result);
 
